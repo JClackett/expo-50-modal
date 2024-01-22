@@ -1,10 +1,11 @@
-import { Link, useGlobalSearchParams } from "expo-router"
+import { Link, useGlobalSearchParams, useLocalSearchParams } from "expo-router"
 import { StatusBar } from "expo-status-bar"
 import { Text, View } from "react-native"
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context"
 
 export default function Modal() {
   const params = useGlobalSearchParams()
+  const localParams = useLocalSearchParams()
   return (
     <SafeAreaProvider>
       <SafeAreaView className="flex-1">
@@ -13,8 +14,12 @@ export default function Modal() {
             Open modal2
           </Link>
           <View>
-            <Text>Current params</Text>
+            <Text>Global params</Text>
             <Text>{JSON.stringify(params, null, 2)}</Text>
+          </View>
+          <View>
+            <Text>Local params</Text>
+            <Text>{JSON.stringify(localParams, null, 2)}</Text>
           </View>
         </View>
       </SafeAreaView>
