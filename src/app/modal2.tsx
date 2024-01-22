@@ -10,14 +10,14 @@ export default function Modal() {
     router.back()
   }
   const handleReplace = () => {
-    router.replace({ pathname: "modal", params: { foo: "bar" } })
+    router.replace({ pathname: "/modal", params: { foo: "bar" } })
   }
   return (
     <SafeAreaProvider>
       <SafeAreaView className="flex-1">
         <View className="flex items-center pt-20 gap-10 justify-center">
           <TouchableOpacity onPress={handleBack} className="p-2 border">
-            <Text>Back</Text>
+            <Text>Back (doesn't pass params)</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={handleReplace} className="p-2 border">
